@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            border: 1px solid #000;
+            margin-top: 40px; /* Menambah jarak atas */
+        }
+        .title {
+            text-align: center;
+            font-weight: bold;
+            font-size: 18px;
+            margin-bottom: -30px;
+        }
+        .section {
+            border-bottom: 1px solid #000;
+            padding: 10px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: 50px 1fr 200px;
+            border-bottom: 1px solid #000;
+        }
+        .grid-header {
+            font-weight: bold;
+            padding: 10px;
+            border-bottom: 1px solid #000;
+            border-right: 1px solid #000;
+        }
+        .grid-cell {
+            padding: 10px;
+            border-right: 1px solid #000;
+        }
+        .grid-cell:last-child {
+            border-right: none;
+            text-align: right;
+        }
+        .total-section {
+            display: grid;
+            grid-template-columns: 1fr 200px;
+            border-bottom: 1px solid #000;
+        }
+        .total-label {
+            padding: 10px;
+            border-right: 1px solid #000;
+        }
+        .total-value {
+            padding: 10px;
+            text-align: right;
+        }
+        .footer {
+            padding: 10px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+        .qr-code {
+            width: 100px;
+            height: 100px;
+            background-color: #eee;
+        }
+        .info-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .info-table td {
+            padding: 5px;
+            vertical-align: top;
+        }
+        .info-label {
+            width: 200px;
+            text-align: left;
+        }
+        .info-colon {
+            width: 20px;
+            text-align: center;
+        }
+        .info-value {
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="title">Faktur Pajak</div>
+    <div class="container">
+        <div class="section">
+            <table class="info-table">
+                <tr>
+                    <td class="info-label">Kode dan Nomor Seri Faktur Pajak</td>
+                    <td class="info-colon">:</td>
+                    <td class="info-value">010.010-24.37238201</td>
+                </tr>
+            </table>
+        </div>
+        
+        <div class="section">
+            <div><strong>Pengusaha Kena Pajak</strong></div>
+            <table class="info-table">
+                <tr>
+                    <td class="info-label">Nama</td>
+                    <td class="info-colon">:</td>
+                    <td class="info-value">PT XYZ INDONESIA</td>
+                </tr>
+                <tr>
+                    <td class="info-label">Alamat</td>
+                    <td class="info-colon">:</td>
+                    <td class="info-value">GEDUNG ABC LANDMARK TOWER 2 LANTAI 21, JL JEND SUDIRMAN KAVELING 99, KOTA METROPOLIS</td>
+                </tr>
+                <tr>
+                    <td class="info-label">NPWP</td>
+                    <td class="info-colon">:</td>
+                    <td class="info-value">010611200093000 / 001061120093000</td>
+                </tr>
+                <tr>
+                    <td class="info-label">NITU</td>
+                    <td class="info-colon">:</td>
+                    <td class="info-value">001061120009300000000000</td>
+                </tr>
+            </table>
+        </div>
+        
+        <div class="section">
+            <div><strong>Pembeli Barang Kena Pajak / Penerima Jasa Kena Pajak</strong></div>
+            <table class="info-table">
+                <tr>
+                    <td class="info-label">Nama</td>
+                    <td class="info-colon">:</td>
+                    <td class="info-value">PT ELANG PERDANA TYPE INDUSTRY</td>
+                </tr>
+                <tr>
+                    <td class="info-label">Alamat</td>
+                    <td class="info-colon">:</td>
+                    <td class="info-value">JL. MERPATI Blok - No - RT.123 RW.456 Kel. MAKMUR Jaya Kec. SEJAHTERA Kota/Kab. SENTOSA PROVINSI INDAH</td>
+                </tr>
+                <tr>
+                    <td class="info-label">NPWP</td>
+                    <td class="info-colon">:</td>
+                    <td class="info-value">016386112436000 / 001638611243600</td>
+                </tr>
+                <tr>
+                    <td class="info-label">NITU</td>
+                    <td class="info-colon">:</td>
+                    <td class="info-value">001638611243600000000000</td>
+                </tr>
+            </table>
+        </div>
+        
+        <div class="grid">
+            <div class="grid-header">No.</div>
+            <div class="grid-header">Nama Barang Kena Pajak / Jasa Kena Pajak</div>
+            <div class="grid-header">Harga Jual/Penggantian/Uang Muka/Termin</div>
+            
+            <div class="grid-cell">1</div>
+            <div class="grid-cell">Layanan Satelit Business Service Rp 2.725.225 x 1</div>
+            <div class="grid-cell">2.725.225,00</div>
+        </div>
+        
+        
+        <div class="footer">
+            <div>
+                <div class="qr-code"></div>
+                <div>SBS-0099-123_PT. RAJAWALI PRIMA MANUFACTURING</div>
+            </div>
+            <div style="text-align: right;">
+                <div>JAKARTA SELATAN, 01 November 2024</div>
+                <div style="margin-top: 50px;">Rina Kartika Sari</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

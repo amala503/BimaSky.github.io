@@ -1,0 +1,158 @@
+/* SkyLink Theme CSS */
+:root {
+    --primary-color: #007bff;
+    --space-blue: #1a237e;
+    --space-dark: #121212;
+    --accent-color: #00b4d8;
+    --text-light: #ffffff;
+    --text-gray: #adb5bd;
+}
+
+body {
+    background: linear-gradient(to bottom, var(--space-dark), var(--space-blue));
+    color: var(--text-light);
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Navbar Styling */
+.navbar {
+    background: rgba(26, 35, 126, 0.9) !important;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.navbar-brand {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--accent-color) !important;
+}
+
+Hero Section
+.hero-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+                url('/skripsi/assets/satelit.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 120px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-text {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    color: var(--text-light);
+}
+
+/* Cards Styling */
+.card {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-body {
+    color: #000000;
+}
+
+.card-title, .card-text {
+    color: #000000 !important;
+}
+
+/* Text colors */
+h1, h2, h3, h4, h5, h6, p, span, div {
+    color: var(--text-light);
+}
+
+/* Buttons */
+.btn-primary {
+    background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+    border: none;
+    padding: 10px 25px;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0, 180, 216, 0.5);
+}
+
+.btn-outline-light {
+    border-radius: 25px;
+    padding: 10px 25px;
+    border: 2px solid var(--text-light);
+    transition: all 0.3s ease;
+}
+
+.btn-outline-light:hover {
+    background: var(--text-light);
+    color: var(--space-blue);
+    transform: scale(1.05);
+}
+
+/* Promo Section */
+#promo {
+    background: linear-gradient(135deg, var(--space-blue), var(--space-dark));
+    padding: 80px 0;
+}
+
+/* FAQ Section */
+.faq-section {
+    background: rgba(26, 35, 126, 0.3);
+    border-radius: 15px;
+    padding: 30px;
+    margin: 50px 0;
+}
+
+.faq-section h2 {
+    color: var(--text-light) !important;
+}
+
+.faq-item {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.faq-item h3 {
+    color: var(--text-light);
+}
+
+.faq-item p {
+    color: var(--text-gray);
+}
+
+/* Footer */
+footer {
+    background: rgba(26, 35, 126, 0.9);
+    color: var(--text-light);
+}
+
+/* Animation Classes */
+.fade-in {
+    animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 80px 0;
+    }
+    
+    .navbar-brand {
+        font-size: 1.2rem;
+    }
+}
