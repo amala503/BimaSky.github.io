@@ -1,10 +1,7 @@
 <?php
 session_start();
+require_once '../controllers/LoginController.php';
 
-// Hapus semua data sesi
-session_destroy();
-
-// Redirect ke halaman login
-header("Location: login.php");
-exit();
+$controller = new LoginController();
+$controller->logout();
 ?>

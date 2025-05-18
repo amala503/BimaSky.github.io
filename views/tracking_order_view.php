@@ -90,33 +90,33 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav me-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="home.php">
+                            <a class="nav-link" href="home">
                                 <i class="bi bi-house"></i> Beranda
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="produk.php">
+                            <a class="nav-link" href="produk">
                                 <i class="bi bi-box"></i> Produk
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="promo.php">
+                            <a class="nav-link" href="promo">
                                 <i class="bi bi-tag"></i> Promo
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="faq.php">
+                            <a class="nav-link" href="faq">
                                 <i class="bi bi-question-circle"></i> FAQ
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" href="tracking.order.php">
+                            <a class="nav-link active" href="tracking.order">
                                 <i class="bi bi-cart"></i> Pesanan
                             </a>
                         </li>
                     </ul>
                     <div class="d-flex">
-                        <a class="nav-link text-white" href="profile.php">
+                        <a class="nav-link text-white" href="profile">
                             <i class="bi bi-person-circle"></i> Profile
                         </a>
                     </div>
@@ -185,7 +185,7 @@
                             </div>
 
                             <div class="d-flex justify-content-end">
-                                <a href="track.detail.php?kode=<?php echo urlencode($order['kode_pesanan']); ?>" 
+                                <a href="track.detail?kode=<?php echo urlencode($order['kode_pesanan']); ?>" 
                                    class="btn btn-primary">
                                     <i class="bi bi-truck"></i> Lacak Pesanan
                                 </a>
@@ -198,7 +198,7 @@
                     <i class="bi bi-cart-x"></i>
                     <h3 class="text-white">Belum ada pesanan</h3>
                     <p class="text-white-50">Anda belum memiliki pesanan. Silakan berbelanja terlebih dahulu.</p>
-                    <a href="produk.php" class="btn btn-primary">
+                    <a href="produk" class="btn btn-primary">
                         <i class="bi bi-cart-plus"></i> Mulai Berbelanja
                     </a>
                 </div>

@@ -1,0 +1,31 @@
+RewriteEngine On
+
+# Aktifkan opsi FollowSymLinks jika tersedia
+Options +FollowSymLinks
+
+# Jika file atau direktori ada, gunakan itu
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Redirect localhost/skripsi ke localhost/skripsi/home
+RewriteRule ^$ display/home.php [L]
+
+# Redirect untuk URL dengan ekstensi .php (untuk kompatibilitas)
+# Contoh: localhost/skripsi/home.php -> localhost/skripsi/display/home.php
+RewriteRule ^([^/]+)\.php$ display/$1.php [L]
+
+# Redirect untuk URL tanpa ekstensi .php
+# Contoh: localhost/skripsi/home -> localhost/skripsi/display/home.php
+RewriteRule ^([^/]+)/?$ display/$1.php [L]
+
+# Redirect untuk URL dengan parameter
+# Contoh: localhost/skripsi/produk/1 -> localhost/skripsi/display/produk.php?id=$1
+RewriteRule ^([^/]+)/([^/]+)/?$ display/$1.php?id=$2 [L,QSA]
+
+# Redirect untuk URL dengan multiple parameter
+# Contoh: localhost/skripsi/produk/kategori/1 -> localhost/skripsi/display/produk.php?kategori=1
+RewriteRule ^([^/]+)/([^/]+)/([^/]+)/?$ display/$1.php?$2=$3 [L,QSA]
+
+# Jika ada error 404, arahkan ke halaman 404 kustom
+ErrorDocument 404 /skripsi/display/404.php

@@ -30,13 +30,18 @@ class TrackDetailController {
             $kode_pesanan = $_POST['kode_pesanan'];
             $user_id = $_SESSION['user_id'];
             
-            if ($this->model->confirmOrder($kode_pesanan, $user_id)) {
-                header("Location: track.detail.php?kode=" . urlencode($kode_pesanan) . "&status=success");
-                exit();
-            } else {
-                header("Location: track.detail.php?kode=" . urlencode($kode_pesanan) . "&status=error");
-                exit();
-            }
+          // 💡 Ambil status dan validasi pakai fungsi unit
+          $current_status = $this->model->getOrderStatus($kode_pesanan, $user_id);
+          if ($this->model->canConfirmOrder($current_status)) {
+              if ($this->model->updateOrderStatusToDiterima($kode_pesanan, $user_id)) {
+                  header("Location: track.detail.php?kode=" . urlencode($kode_pesanan) . "&status=success");
+                  exit();
+              }
+          }
+
+          // Jika gagal atau status tidak valid
+          header("Location: track.detail.php?kode=" . urlencode($kode_pesanan) . "&status=error");
+          exit();
         }
 
         require_once __DIR__ . '/../views/track_detail_view.php';

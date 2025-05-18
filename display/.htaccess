@@ -1,0 +1,25 @@
+# Ini adalah file .htaccess untuk folder display
+# Ini akan memungkinkan akses ke file-file di folder display melalui URL rewriting
+# tetapi akan mencegah listing direktori
+
+# Mencegah listing direktori
+Options -Indexes
+
+# Aktifkan mesin rewrite
+RewriteEngine On
+
+# Memungkinkan akses ke file-file di folder ini
+<FilesMatch "\.php$">
+    Order Allow,Deny
+    Allow from all
+</FilesMatch>
+
+# Jika file atau direktori ada, gunakan itu
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Redirect untuk URL tanpa ekstensi .php
+# Contoh: localhost/skripsi/display/home -> localhost/skripsi/display/home.php
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^([^/]+)/?$ $1.php [L]

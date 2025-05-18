@@ -19,14 +19,23 @@ class TrackingOrderController {
             exit();
         }
 
-        // Get orders
         $user_id = $_SESSION['user_id'];
-        $orders = $this->model->getOrdersByUserId($user_id);
+        
+        try {
+            // Validasi user_id terlebih dahulu dengan fungsi unit
+            $this->model->validateUserId($user_id);
 
-        // Load view
-        require_once __DIR__ . '/../views/tracking_order_view.php';
+            // Ambil pesanan dari model
+            $orders = $this->model->getOrdersByUserId($user_id);
+
+            // Load view
+            require_once __DIR__ . '/../views/tracking_order_view.php';
+        } catch (Exception $e) {
+            $_SESSION['error'] = "Terjadi kesalahan: " . $e->getMessage();
+            header("Location: error.php");
+            exit();
+        }
     }
-
     public function __destruct() {
         Database::closeConnection();
     }
